@@ -1,0 +1,144 @@
+:root {
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-headline: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  /* colors */
+  --primary-color: #f0a868;
+  --secondary-color: #525b0f;
+  --tertiary-color: #8a470c;
+  --light-grey: #d0d0d0;
+  --yellow: rgb(255, 255, 125);
+  --light-yellow: rgb(255, 255, 236);
+ 
+  /* sizes */
+  --font-base: 18px;
+  --small-font: 0.8em;
+  --large-font: 1.2em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-base);
+  background-color: var(--yellow);
+}
+
+img {
+  max-width: 100%;
+  display: flex;
+  margin: 100px;
+  justify-self: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+h1 {
+  font-size: 72px;
+}
+
+h2 {
+  font-size: 48px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  text-align: center;
+}
+
+p {
+  padding: 0.75rem;
+
+  &.welcome {
+    text-align: center;
+  }
+}
+
+.white-space {
+  margin: 100px;
+}
+
+.logo {
+  line-height: 60px;
+  width: 245px;
+  overflow: hidden;
+  display: flex;
+  font-size: 30px;
+  text-align: right;
+  font-family: var(--font-headline);
+}
+
+.logo img {
+  width: 60px;
+  height: 60px;
+}
+
+.logo a {
+  text-decoration: none;
+  color: var(--font-body);
+}
+
+.hero {
+  position: relative;
+}
+
+.hero .logo {
+  position: absolute;
+  left: calc(50% - 60px);
+  bottom: -15px;
+  background-color: white;
+}
+
+.logo--square {
+  font-size: var(--small-font);
+  width: 110px;
+  height: 80px;
+
+  flex-direction: column;
+  align-items: flex-end;
+  box-shadow: 1px 1px 4px var(--light-grey);
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+}
+
+.logo--square img {
+  width: 90px;
+  height: 90px;
+  margin-top: -1.3em;
+}
+
+.logo--square > div {
+  margin-top: -1.7em;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    font-family: var(--font-headline);
+    background-color: var(--light-yellow);
+    max-width: 1080px;
+    margin: auto;
+  }
+
+  .mission {
+    font-size: 1.2em;
+  }
+
+  .cart-card {
+    font-size: inherit;
+    grid-template-columns: 150px auto 15%;
+  }
+}
+
+footer {
+  font-size: var(--small-font);
+  font-family: var(--font-body);
+  border-top: 1px solid var(--tertiary-color);
+  padding: 1em;
+}
