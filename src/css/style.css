@@ -40,6 +40,22 @@ header {
   padding: 0.5rem;
 }
 
+a:link {
+  color: #525b0f;
+}
+
+a:visited {
+  color: #8a470c;
+}
+
+a:hover {
+  color: #3c15ea;
+}
+
+a:active {
+  color: #000;
+}
+
 h1 {
   font-size: 72px;
 }
@@ -62,6 +78,33 @@ p {
 
 .white-space {
   margin: 100px;
+}
+
+#bacon1 {
+  width: 350px;
+  height: 300px;
+  background-color: var(--yellow);
+  justify-self: center;
+  animation-name: api;
+  animation-duration: 4s;
+}
+
+#bacon2 {
+  width: 300px;
+  height: 330px;
+  background-color: var(--yellow);
+  justify-self: center;
+  animation-name: api;
+  animation-duration: 4s;
+}
+
+#keanu {
+  width: 350px;
+  height: 300px;
+  background-color: var(--yellow);
+  justify-self: center;
+  animation-name: api;
+  animation-duration: 4s;
 }
 
 .logo {
@@ -118,6 +161,18 @@ p {
   margin-top: -1.7em;
 }
 
+footer {
+  font-size: var(--small-font);
+  font-family: var(--font-body);
+  border-top: 1px solid var(--tertiary-color);
+  padding: 1em;
+}
+
+@keyframes api {
+  from {background-color: var(--yellow);}
+  to {background-color: var(--primary-color);}
+}
+
 @media screen and (min-width: 600px) {
   body {
     font-family: var(--font-headline);
@@ -126,19 +181,12 @@ p {
     margin: auto;
   }
 
-  .mission {
-    font-size: 1.2em;
+  #bacon1, #bacon2, #keanu {
+    background-color: var(--light-yellow);
   }
 
-  .cart-card {
-    font-size: inherit;
-    grid-template-columns: 150px auto 15%;
+  @keyframes api {
+    from {background-color: var(--light-yellow);}
+    to {background-color: var(--primary-color);}
   }
-}
-
-footer {
-  font-size: var(--small-font);
-  font-family: var(--font-body);
-  border-top: 1px solid var(--tertiary-color);
-  padding: 1em;
 }
