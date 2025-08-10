@@ -1,67 +1,149 @@
-// wrapper for querySelector...returns matching element
-export function qs(selector, parent = document) {
-  return parent.querySelector(selector);
-} 
-// or a more concise version if you are into that sort of thing:
-// export const qs = (selector, parent = document) => parent.querySelector(selector);
+// Get American food from the API
+export function americanFood() { 
+    document.getElementById('american').addEventListener('click', () => {
+      const dataContainer = document.getElementById('data');
+      const errorContainer = document.getElementById('error');
 
-// retrieve data from localstorage
-export function getLocalStorage(key) {
-  // const data = localStorage.getItem(key);
-  // const parsed = JSON.parse(data);
-  // return Array.isArray(parsed) ? parsed : [];
-  return JSON.parse(localStorage.getItem(key));
-}
-// save data to local storage
-export function setLocalStorage(key, data) {
-  localStorage.setItem(key, JSON.stringify(data));
-}
-// set a listener for both touchend and click
-export function setClick(selector, callback) {
-  qs(selector).addEventListener("touchend", (event) => {
-    event.preventDefault();
-    callback();
-  });
-  qs(selector).addEventListener("click", callback);
-}
+      // Clear previous data and errors
+      dataContainer.textContent = '';
+      errorContainer.textContent = '';
 
-// get the product id from the query string
-export function getParam(param) {
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const product = urlParams.get(param);
-  return product
-}
+      fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=American')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(parsedData => {
+          dataContainer.textContent = JSON.stringify(parsedData, null, 2);
+        })
+        .catch(error => {
+          errorContainer.textContent = `Error fetching data: ${error.message}`;
+        });
+    })};
 
-export function renderListWithTemplate(template, parentElement, list, position = "afterbegin", clear = false) {
-  const htmlStrings = list.map(template);
-  // if clear is true we need to clear out the contents of the parent.
-  if (clear) {
-    parentElement.innerHTML = "";
-  }
-  parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
-}
+// Get Chinese food from the API
+export function chineseFood() { 
+    document.getElementById('chinese').addEventListener('click', () => {
+      const dataContainer = document.getElementById('data');
+      const errorContainer = document.getElementById('error');
 
-export function renderWithTemplate(template, parentElement, data, callback) {
-  parentElement.innerHTML = template;
-  if (callback) {
-    callback(data);
-  }
-}
+      // Clear previous data and errors
+      dataContainer.textContent = '';
+      errorContainer.textContent = '';
 
-async function loadTemplate(path) {
-  const res = await fetch(path);
-  const template = await res.text();
-  return template;
-}
+      fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Chinese')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(parsedData => {
+          dataContainer.textContent = JSON.stringify(parsedData, null, 2);
+        })
+        .catch(error => {
+          errorContainer.textContent = `Error fetching data: ${error.message}`;
+        });
+    })};
 
-export async function loadHeaderFooter() {
-  const headerTemplate = await loadTemplate('../partials/header.html');
-  const footerTemplate = await loadTemplate('../partials/footer.html');
+// Get French food from the API
+export function frenchFood() { 
+    document.getElementById('french').addEventListener('click', () => {
+      const dataContainer = document.getElementById('data');
+      const errorContainer = document.getElementById('error');
 
-  const headerElement = document.querySelector('#main-header');
-  const footerElement = document.querySelector('#main-footer');
+      // Clear previous data and errors
+      dataContainer.textContent = '';
+      errorContainer.textContent = '';
 
-  renderWithTemplate(headerTemplate, headerElement);
-  renderWithTemplate(footerTemplate, footerElement);
-}
+      fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=French')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(parsedData => {
+          dataContainer.textContent = JSON.stringify(parsedData, null, 2);
+        })
+        .catch(error => {
+          errorContainer.textContent = `Error fetching data: ${error.message}`;
+        });
+    })};
+
+// Get Italian food from the API
+export function italianFood() { 
+    document.getElementById('italian').addEventListener('click', () => {
+      const dataContainer = document.getElementById('data');
+      const errorContainer = document.getElementById('error');
+
+      // Clear previous data and errors
+      dataContainer.textContent = '';
+      errorContainer.textContent = '';
+
+      fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Italian')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(parsedData => {
+          dataContainer.textContent = JSON.stringify(parsedData, null, 2);
+        })
+        .catch(error => {
+          errorContainer.textContent = `Error fetching data: ${error.message}`;
+        });
+    })};
+
+// Get Japanese food from the API
+export function japaneseFood() { 
+    document.getElementById('japanese').addEventListener('click', () => {
+      const dataContainer = document.getElementById('data');
+      const errorContainer = document.getElementById('error');
+
+      // Clear previous data and errors
+      dataContainer.textContent = '';
+      errorContainer.textContent = '';
+
+      fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Japanese')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(parsedData => {
+          dataContainer.textContent = JSON.stringify(parsedData, null, 2);
+        })
+        .catch(error => {
+          errorContainer.textContent = `Error fetching data: ${error.message}`;
+        });
+    })};
+
+// Get Mexican food from the API
+export function mexicanFood() { 
+    document.getElementById('mexican').addEventListener('click', () => {
+      const dataContainer = document.getElementById('data');
+      const errorContainer = document.getElementById('error');
+
+      // Clear previous data and errors
+      dataContainer.textContent = '';
+      errorContainer.textContent = '';
+
+      fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Mexican')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(parsedData => {
+          dataContainer.textContent = JSON.stringify(parsedData, null, 2);
+        })
+        .catch(error => {
+          errorContainer.textContent = `Error fetching data: ${error.message}`;
+        });
+    })};

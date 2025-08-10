@@ -111,6 +111,12 @@ p.welcome {
   animation-duration: 4s;
 }
 
+section {
+  text-align: center;
+}
+
+
+
 footer {
   font-size: var(--small-font);
   font-family: var(--font-body);
