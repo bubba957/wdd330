@@ -42,18 +42,22 @@ header {
 
 a:link {
   color: #525b0f;
+  background-color: var(--yellow);
 }
 
 a:visited {
   color: #8a470c;
+  background-color: var(--yellow);
 }
 
 a:hover {
   color: #3c15ea;
+  background-color: var(--yellow);
 }
 
 a:active {
   color: #000;
+  background-color: var(--yellow);
 }
 
 h1 {
@@ -70,10 +74,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 p {
   padding: 0.75rem;
+}
 
-  &.welcome {
+p.welcome {
     text-align: center;
-  }
 }
 
 .white-space {
@@ -105,60 +109,6 @@ p {
   justify-self: center;
   animation-name: api;
   animation-duration: 4s;
-}
-
-.logo {
-  line-height: 60px;
-  width: 245px;
-  overflow: hidden;
-  display: flex;
-  font-size: 30px;
-  text-align: right;
-  font-family: var(--font-headline);
-}
-
-.logo img {
-  width: 60px;
-  height: 60px;
-}
-
-.logo a {
-  text-decoration: none;
-  color: var(--font-body);
-}
-
-.hero {
-  position: relative;
-}
-
-.hero .logo {
-  position: absolute;
-  left: calc(50% - 60px);
-  bottom: -15px;
-  background-color: white;
-}
-
-.logo--square {
-  font-size: var(--small-font);
-  width: 110px;
-  height: 80px;
-
-  flex-direction: column;
-  align-items: flex-end;
-  box-shadow: 1px 1px 4px var(--light-grey);
-  justify-content: center;
-  align-items: center;
-  line-height: 1;
-}
-
-.logo--square img {
-  width: 90px;
-  height: 90px;
-  margin-top: -1.3em;
-}
-
-.logo--square > div {
-  margin-top: -1.7em;
 }
 
 footer {
